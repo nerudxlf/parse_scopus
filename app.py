@@ -55,7 +55,7 @@ def read_txt(path, mode) -> list:
     :return:
     """
     arr_result = []
-    with open("1.txt", "r") as f:
+    with open(path, mode) as f:
         data = f.readlines()
         for i in data:
             if i[-1] == "\n":
@@ -78,7 +78,7 @@ def main():
     arr_author_name = []
     chromedriver_path = 'C:/programs/chrome/chromedriver'
 
-    arr_link = read_txt("1.txt", "r")  # read id
+    arr_link = read_txt("id.txt", "r")  # read id
     browser = chrome(chromedriver_path)  # get browser
     arr_html_text = get_arr_html(arr_link, browser)  # get all html
     for i in arr_html_text:
